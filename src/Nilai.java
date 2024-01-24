@@ -1,4 +1,4 @@
-import java.util.Map;
+import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Nilai {
@@ -10,7 +10,9 @@ public class Nilai {
             "C", 2.0,
             "D", 1.0,
             "E", 0.0);
-    private String[] keyNilai = mutu.keySet().toArray(new String[0]);
+    private String[] keyNilai = Arrays.stream(mutu.keySet().toArray(new String[0]))
+    .sorted()
+    .toArray(String[]::new);
     private double sks;
     private String[] daftarsks = { "1", "2", "3", "4", "5", "6", "12" };
     private String nilaihuruf;
